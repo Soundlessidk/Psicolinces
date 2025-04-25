@@ -6,7 +6,7 @@
         Psicolinces
       </RouterLink>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" @click="toggleMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -58,5 +58,11 @@
 <script>
 export default {
   name: 'Header',
+  methods: {
+    toggleMenu() {
+      const navbarCollapse = document.getElementById('navbarNav');
+      navbarCollapse.classList.toggle('show');
+    }
+  }
 };
 </script>
