@@ -1,0 +1,380 @@
+/* Colores de la paleta */
+:root {
+  --color-primario: #98bbe5;  /* Azul pastel */
+  --color-secundario: #e6c2ee;  /* Lila pastel */
+  --color-acento: #009e5c;  /* Verde intenso */
+  --color-amarillo: #98bbe5;  /* Amarillo pastel */
+}
+
+body {
+  padding-top: 80px;
+  background-color: #ffffff;
+  font-family: 'Lora', serif;
+  color: #333;
+  margin-top: 70px; /* espacio para el header fijo */
+  scroll-behavior: smooth;
+  margin: 0;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 5em;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: var(--color-primario);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-brand,
+.nav-link,
+.dropdown-item {
+  color: #fff !important;
+}
+
+.navbar-brand,
+.nav-link,
+.dropdown-item,
+.footer {
+  font-weight: bold;
+}
+
+.nav-link.active {
+  background-color: #7faedb;  /* Ejemplo de color de fondo, ajusta según tu paleta */
+    color: white !important;    /* Cambia el color del texto al blanco para resaltar */
+    font-weight: bold;          /* Puede resaltar más el texto */
+    border-radius: 5px;         /* Opcional: Añadir bordes redondeados */
+}
+
+/* Efecto para el enlace activo */
+.nav-link {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto para cuando el usuario pasa el mouse sobre el enlace */
+.nav-link:hover {
+  background-color: #80b3e6;  /* Un color más oscuro para el hover */
+  color: white !important;
+  transition: background-color 0.3s ease;  /* Transición suave */
+}
+
+/* Asegúrate de que los enlaces inactivos tengan un color más suave */
+.nav-link {
+  color: #333 !important;  /* Color predeterminado de los enlaces */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Enlace por defecto */
+.nav-link {
+  color: #333 !important;  /* Color predeterminado de los enlaces */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.navbar-brand img {
+  margin: 0;  /* Elimina cualquier margen alrededor de la imagen */
+  padding: 0;  /* Elimina cualquier padding alrededor de la imagen */
+  border: none;  /* Elimina cualquier borde que pudiera estar aplicándose */
+  transform: scale(1.4); /* ajusta el valor según sea necesario */
+}
+
+.section {
+  padding: 60px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.section h2 {
+  color: var(--color-acento);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section img {
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.section img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: rgba(230, 194, 238, 0.9);
+  display: none;
+  transition: all 0.3s ease-in-out;
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-amarillo);
+  color: #000 !important;
+}
+
+.nav-link.dropdown-toggle::after {
+  display: none !important;
+}
+
+.section .bi-chevron-down {
+  display: none !important;
+}
+
+.footer {
+  background-color: var(--color-primario);
+  color: white;
+  text-align: center;
+  padding: 1em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 10px;
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+  }
+
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+
+.articulo-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  width: 100%; /* Ocupar todo el ancho de la columna */
+  height: 250px; /* Altura fija para todas las tarjetas */
+  transition: transform 0.3s ease;
+  display: flex; /* Asegura que la tarjeta se expanda */
+  flex-direction: column; /* Dirección de flexbox */
+  border-radius: 8px; /* Bordes redondeados para estética */
+}
+
+.articulo-card .card-img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+.articulo-card .overlay-content {
+  position: absolute; /* sobrepone el contenido */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  color: white;
+  z-index: 2; /* asegúrate de que esté sobre la imagen */
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+.articulo-card .card-text {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+
+.articulo-card:hover .overlay-content {
+  opacity: 1;
+}
+
+.articulo-card:hover .card-img {
+  transform: scale(1.1);
+}
+
+/* ✨ Botón con efecto suave */
+.articulo-card .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articulo-card .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px white;
+}
+
+.intro-container {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 1rem;
+  background-color: #fff;
+}
+
+.intro-container::before {
+  content: "";
+  background-image: url('../Imagenes/logo.jpg');
+  background-size: cover; /* Esto hace que la imagen cubra todo el div */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05; /* Muy tenue */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.intro-container h2,
+.intro-container p {
+  position: relative;
+  z-index: 1;
+}
+
+.eventos-section {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+}
+
+.titulo-eventos {
+  font-size: 2.5rem;
+  color: var(--color-acento);
+  margin-bottom: 10px;
+}
+
+.subtitulo-eventos {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.evento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: 100%; /* Ajusta la altura de la tarjeta */
+}
+
+.evento-card:hover {
+  transform: scale(1.03);
+}
+
+.evento-card .card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+.evento-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(152, 187, 229, 0.9); /* Color de fondo pastel */
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  max-height: 100%; /* Evita que se corte el texto */
+  overflow-y: auto; /* Permite desplazamiento si el texto es largo */
+  border-radius: 12px; /* Opcional, para bordes redondeados */
+}
+
+.evento-info::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.evento-info::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4); /* Color del "pulgar" de la barra */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.evento-info::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Color del "pulgar" cuando el mouse está sobre él */
+}
+
+/* Estilo para la parte de la pista de la barra */
+.evento-info::-webkit-scrollbar-track {
+  background-color: transparent; /* Fondo transparente para la pista */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.evento-card:hover .evento-info {
+  transform: translateY(0);
+}
+
+.evento-info h5 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.evento-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5; /* Mejora la legibilidad */
+  word-wrap: break-word; /* Asegura que el texto largo se ajuste al ancho */
+}
+
+.recursos-section h2 {
+  font-size: 2rem;
+  color: var(--color-acento, #1d3557);
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.btn-carousel {
+  display: inline-block;
+  padding: 0.3rem 0.75rem; /* Menos espacio interno */
+  font-size: 0.85rem;       /* Tamaño de letra más pequeño */
+  color: #fff;
+  border: 1.5px solid #fff;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-carousel:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
