@@ -1,5 +1,5 @@
 <template>
-    <div class="card p-4 shadow">
+    <div class="card-container p-4 shadow">
       <h3 class="text-center mb-4">Líneas de ayuda psicológica</h3>
       <div class="row g-3">
         <div v-for="linea in lineas" :key="linea.nombre" class="col-md-6">

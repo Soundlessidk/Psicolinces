@@ -8,8 +8,8 @@
           :key="psico.nombre"
           class="col-md-6"
         >
-          <div class="card shadow">
-            <div class="row g-0">
+          <div class="card shadow h-100">
+            <div class="row g-0 h-100">
               <div class="col-md-4">
                 <img :src="psico.imagen" class="img-fluid rounded-start h-100 object-fit-cover" :alt="psico.nombre" />
               </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card p-4 shadow">
+    <div class="card-container p-4 shadow">
       <h3 class="text-center mb-3">Encuentra ayuda psicológica cercana</h3>
       <p class="text-center mt-2 small text-muted">
         El mapa mostrará clínicas de salud mental cercanas a tu ubicación.
