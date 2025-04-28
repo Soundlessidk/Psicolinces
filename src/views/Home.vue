@@ -29,7 +29,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5>Agenda tu cita</h5>
               <p>Encuentra herramientas para tu bienestar emocional</p>
-              <a href="/institucionales" class="btn-carousel">Citas</a>
+              <RouterLink class="btn-carousel" to="/pasantes" @click="handleMenu">Citas</RouterLink>
             </div>
           </div>
           <div class="carousel-item">
@@ -37,7 +37,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5>Autoconocimiento</h5>
               <p>Conócete mejor y crece cada día</p>
-              <a href="/consejos" class="btn-carousel">Click aquí para más consejos</a>
+              <RouterLink class="btn-carousel" to="/consejos" @click="handleMenu">Click aquí para más consejos</RouterLink>
             </div>
           </div>
         </div>

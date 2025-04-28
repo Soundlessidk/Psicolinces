@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-5">
+    <div class="page-content container my-5">
       <h2 class="text-center mb-4">Psicólogos Institucionales</h2>
   
       <div class="row g-4">
@@ -62,13 +62,13 @@
       nombre: 'América Concepción Flores Arias',
       horario: 'Lunes a Viernes, 9:00 AM - 3:00 PM',
       lugar: 'Campus 1',
-      imagen: 'https://via.placeholder.com/150',
+      imagen: '/Imagenes/Psicologos/psicologa1.png',
     },
     {
       nombre: 'Cynthia Aguila',
       horario: 'Fines de semana, 10:00 AM - 4:00 PM',
       lugar: 'Remota',
-      imagen: 'https://via.placeholder.com/150',
+      imagen: '/Imagenes/Psicologos/psicologa1.png',
     },
   ]
   
@@ -175,5 +175,13 @@
     z-index: 9999;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
+
+  .page-content {
+    min-height: calc(100vh - 200px); /* Ajusta 200px al tamaño de tu header + footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   </style>
   
